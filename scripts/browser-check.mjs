@@ -7,7 +7,8 @@ try {
   });
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("http://localhost:5173");
+  const baseURL=process.env.CHECK_BASE_URL || "http://localhost:5173";
+  await page.goto(baseURL);
   await page
     .getByRole("heading", { name: "Your health story. All in one place." })
     .waitFor();
@@ -50,7 +51,7 @@ try {
     .getByText("No active care connections. Your records are private.")
     .waitFor();
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("http://localhost:5173/patient/dashboard");
+  await page.goto(`${baseURL}/patient/dashboard`);
   await page.getByRole("heading", { name: "A little care, Alex." }).waitFor();
   assert.ok(
     await page.evaluate(

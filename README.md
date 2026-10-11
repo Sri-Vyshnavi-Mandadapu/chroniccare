@@ -2,6 +2,12 @@
 
 A calm, responsive chronic-care portfolio application based on `ChronicCare_Full_Stack_Build_and_Deployment_Guide.pdf` (11 October 2026). React + Vite, Express in Netlify Functions, MongoDB Atlas, React Three Fiber/Drei, and Recharts.
 
+Live demo: https://chroniccare-vyshnavi.netlify.app
+
+Source: https://github.com/Sri-Vyshnavi-Mandadapu/chroniccare (private)
+
+Release verified 11 October 2026: production build and nine focused tests pass; browser journeys pass on desktop and mobile. The live homepage, `/patient/dashboard` SPA route, and `/api/health` return HTTP 200. The deployed health endpoint correctly reports `databaseConfigured: false`: Atlas is not connected. Production visibility is public; previews retain Netlify team-login protection. Deployment used Netlify CLI; automatic GitHub-to-Netlify builds are not configured.
+
 ## Two explicit modes
 
 - **Explore the demo:** fictional patient Alex Morgan, synthetic glucose/BP readings, medication schedules, follow-ups and a demo care connection. Changes persist only in this browser’s localStorage. No account, database, or genuine patient information is needed.
