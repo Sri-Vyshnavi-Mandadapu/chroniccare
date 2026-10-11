@@ -4,7 +4,7 @@ A calm, responsive chronic-care portfolio application based on `ChronicCare_Full
 
 Live demo: https://chroniccare-vyshnavi.netlify.app
 
-Source: https://github.com/Sri-Vyshnavi-Mandadapu/chroniccare (private)
+Source: https://github.com/Sri-Vyshnavi-Mandadapu/chroniccare (public)
 
 Release verified 11 October 2026: production build and nine focused tests pass; browser journeys pass on desktop and mobile. The live homepage, `/patient/dashboard` SPA route, and `/api/health` return HTTP 200. The deployed health endpoint correctly reports `databaseConfigured: false`: Atlas is not connected. Production visibility is public; previews retain Netlify team-login protection. Deployment used Netlify CLI; automatic GitHub-to-Netlify builds are not configured.
 
@@ -40,6 +40,8 @@ npm run dev
    - `MONGODB_URI`: your Atlas driver connection URI, with an encoded password.
    - `MONGODB_DB`: `chroniccare_demo`.
    - `APP_ORIGIN`: the exact HTTPS website origin, without a trailing slash.
+
+   For this deployment, open https://app.netlify.com/projects/chroniccare-vyshnavi/configuration/env . `APP_ORIGIN` and `MONGODB_DB` are already configured. Add the missing `MONGODB_URI` with Functions access and production availability. The URI must contain an actual database-user password, not the `<db_password>` placeholder. Do not paste it into GitHub or chat.
 3. Redeploy so Functions receive the variables. Keep credentials out of Git and never use a `VITE_` prefix for a secret.
 4. Create a patient account and verify a saved reading survives logout/login and another device. `/api/health` checks routing; signed-in `/api/ready` checks database connectivity.
 
